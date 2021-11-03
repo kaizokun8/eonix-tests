@@ -1,0 +1,54 @@
+server:
+  port: 10000
+  servlet:
+    context-path: /user-service
+  ssl:
+    enabled: false
+logging:
+  level:
+    jdbc:
+      sqlonly: fatal
+      resultsettable: info
+      sqltiming: info
+      audit: fatal
+      resultset: fatal
+      connection: fatal
+    org:
+      springframework: debug
+      hibernate:
+        cache: info
+        SQL: trace
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace
+spring:
+  h2:
+    console:
+      enabled: true
+      #accessible via http://localhost:10000/user-service/h2
+      path: /h2
+  datasource:
+    url: jdbc:h2:mem:user_db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      show-sql: true
+      #create the database and tables from the Model before it inserts data from import.sql
+      ddl-auto: create
+    properties:
+      hibernate:
+        connection:
+          charset: UTF-8
+        hbm2ddl:
+          #allow sql insert with multiple lines into import.sql
+          import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
+        format_sql: true
+        generate_statistics: true
+    generate-ddl: true
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
