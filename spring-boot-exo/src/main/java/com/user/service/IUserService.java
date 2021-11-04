@@ -7,11 +7,11 @@ import java.util.Optional;
 
 public interface IUserService {
 
-    Collection<User> findUsersByFirstNameLike(String query);
+    Collection<User> findUsersByFirstName(String query);
 
-    Collection<User> findUsersByLastNameLike(String query);
+    Collection<User> findUsersByLastName(String query);
 
-    Collection<User> findUsersByFullNameLike(String query);
+    Collection<User> findUsersByFullName(String query);
 
     Optional<User> findById(Long id);
 

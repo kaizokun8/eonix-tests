@@ -21,7 +21,7 @@ public class UserRepositoryTest {
         //when
         Collection<User> users = this.userRepository.findUsersByFullNameLike(query);
         //then
-        Assertions.assertThat(users.size()).isEqualTo(2);
+        Assertions.assertThat(users.size()).isEqualTo(3);
     }
 
     @Test
@@ -33,7 +33,6 @@ public class UserRepositoryTest {
         //then
         Assertions.assertThat(users.size()).isEqualTo(1);
     }
-
 
     @Test
     public void givenQuery_whenRequestToFindUsersByLastNameLike_shouldReturnTwoResult() {

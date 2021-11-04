@@ -15,19 +15,19 @@ public class UserService implements IUserService {
     private UserRepository userRepository;
 
     @Override
-    public Collection<User> findUsersByFirstNameLike(String query) {
+    public Collection<User> findUsersByFirstName(String query) {
 
         return this.userRepository.findUsersByFirstNameLike(query);
     }
 
     @Override
-    public Collection<User> findUsersByLastNameLike(String query) {
+    public Collection<User> findUsersByLastName(String query) {
 
         return this.userRepository.findUsersByLastNameLike(query);
     }
 
     @Override
-    public Collection<User> findUsersByFullNameLike(String query) {
+    public Collection<User> findUsersByFullName(String query) {
 
         return this.userRepository.findUsersByFullNameLike(query);
     }
