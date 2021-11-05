@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import configureStore from './configureStore';
 import history from './utils/history';
-import Home from './containers/HomeContainer';
+import Home from './views/Home';
 // Create redux store with history
 const initialState = {};
 const store = configureStore(initialState, history);
