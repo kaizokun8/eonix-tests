@@ -17,25 +17,36 @@ public class Spectator implements Observator {
     @Override
     public void notify(Trick trick) {
 
+        String reaction = null;
+
         switch (trick.getType()) {
             case MUSICAL:
-                this.whistles(trick.getLabel());
+                reaction = whistles(this.name, trick.getLabel());
                 break;
             case ACROBATIC:
-                this.applauds(trick.getLabel());
+                reaction = applauds(this.name, trick.getLabel());
                 break;
-
+            default:
         }
+
+        if (reaction != null) {
+
+            System.out.println(reaction);
+        }
+
     }
 
-    private void applauds(String label) {
-
-        System.out.println(String.format(" %s applaudit pendant le %s", this.name, label));
+    public String getName() {
+        return name;
     }
 
-    private void whistles(String label) {
+    public static String applauds(String name, String label) {
 
-        System.out.println(String.format(" %s siffle pendant le %s", this.name, label));
+        return String.format(" %s applaudit pendant le %s", name, label);
     }
 
+    public static String whistles(String name, String label) {
+
+        return String.format(" %s siffle pendant le %s", name, label);
+    }
 }
