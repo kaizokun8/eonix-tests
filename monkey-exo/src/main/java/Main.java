@@ -30,6 +30,6 @@ public class Main {
 
         Trainer trainerB = new Trainer(monkeyB);
 
-        List.of(trainerA,trainerB).forEach(trainer -> trainer.start(spectator));
+        List.of(trainerA, trainerB).forEach(trainer -> trainer.start(spectator));
     }
 }

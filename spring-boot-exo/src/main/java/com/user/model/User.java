@@ -3,6 +3,7 @@ package com.user.model;
 import com.user.validation.ValidationGroup;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ import java.util.Objects;
 @DynamicUpdate
 @Setter
 @NoArgsConstructor
+@ToString
 public class User {
 
     @Id
