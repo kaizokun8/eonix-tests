@@ -1,28 +1,30 @@
 import React, {useState} from 'react';
 
-export const Counter = () => {
+const increment = (counter) => {
+
+    return counter + 1
+}
+
+const decrement = (counter) => {
+
+    if (counter > 0) {
+        return counter - 1;
+    }
+
+    return counter;
+}
+
+const Counter = () => {
 
     const [counter, setCounter] = useState(0);
 
-    const increment = () => {
-
-        setCounter(counter + 1);
-    }
-
-    const decrement = () => {
-
-        if (counter > 0) {
-            setCounter(counter - 1);
-        }
-    }
-
     return (
         <div>
-            <button onClick={increment}>
+            <button onClick={() => setCounter(increment(counter))}>
                 Incrémenter le compteur
             </button>
             <br/> <br/>
-            <button onClick={decrement}>
+            <button onClick={() => setCounter(decrement(counter))}>
                 Décrémenter le compteur
             </button>
             <br/>
