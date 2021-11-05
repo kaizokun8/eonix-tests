@@ -1,19 +1,12 @@
 import React from 'react';
+import Counter from "./Counter";
 
-function Home({onIncrement, onDecrement, counter}) {
+export const Home = () => {
+
     return (
-        <div>
-            <button onClick={onIncrement}>
-                Incrémenter le compteur
-            </button>
-            <br/> <br/>
-            <button onClick={onDecrement}>
-                Décrémenter le compteur
-            </button>
-            <br/>
-            <h2>Compteur : {counter}</h2>
-        </div>
+        <Counter/>
     );
+
 };
 
 export default Home;
