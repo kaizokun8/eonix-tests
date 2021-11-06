@@ -25,9 +25,6 @@ public class UserRepositoryTest {
         String query = "%Do%";
         //when
         Collection<User> users = this.userRepository.findUsersByFullNameLike(query);
-
-        users.forEach(user -> System.out.println(user));
-
         //then
         Assertions.assertThat(users.size()).isEqualTo(3);
     }

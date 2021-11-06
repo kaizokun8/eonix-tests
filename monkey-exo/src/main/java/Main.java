@@ -1,8 +1,8 @@
 import model.*;
 
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
+
+import static model.Trick.*;
 
 public class Main {
 
@@ -10,17 +10,17 @@ public class Main {
 
         Spectator spectator = new Spectator("John");
 
-        Trick trickA = new Trick("marcher sur les mains", TrickType.ACROBATIC);
+        Trick trickA = new Trick(MARCHER_SUR_MAINS, TrickType.ACROBATIC);
 
-        Trick trickB = new Trick("tenir en équilibre sur une balle", TrickType.ACROBATIC);
+        Trick trickB = new Trick(TENIR_EQUILIBRE_BALLE, TrickType.ACROBATIC);
 
-        Trick trickC = new Trick("sauter à travers un cercle en feu", TrickType.ACROBATIC);
+        Trick trickC = new Trick(SAUTER_CERCLE_FEU, TrickType.ACROBATIC);
 
-        Trick trickD = new Trick("jouer du tambour", TrickType.MUSICAL);
+        Trick trickD = new Trick(JOUER_TAMBOUR, TrickType.MUSICAL);
 
-        Trick trickE = new Trick("jouer de la flute", TrickType.MUSICAL);
+        Trick trickE = new Trick(JOUER_FLUTE, TrickType.MUSICAL);
 
-        Trick trickF = new Trick("jouer de l'harmonica", TrickType.MUSICAL);
+        Trick trickF = new Trick(JOUER_HARMONICA, TrickType.MUSICAL);
 
         Monkey monkeyA = new Monkey("Abu", List.of(trickA, trickB, trickD));
 
