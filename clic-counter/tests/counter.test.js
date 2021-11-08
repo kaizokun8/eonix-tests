@@ -1,4 +1,4 @@
-import {increment,decrement} from '../src/views/Counter';
+import {increment, decrement} from '../src/views/Counter';
 
 test('given value 0, when call increment, should return 1', () => {
     expect(increment(0)).toEqual(1);
