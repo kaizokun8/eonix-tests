@@ -30,16 +30,17 @@ public class Monkey implements Subject {
         this.tricksMap = tricks.stream().collect(Collectors.toMap(Trick::getName, Function.identity()));
     }
 
-    /*
-     execute un tour particulier
+    /**
+     * Execute a single trick and notify the observators
+     * @param name the name of the trick
      */
     public void doTrick(String name) {
 
         this.observators.forEach(obs -> obs.notify(this.tricksMap.get(name)));
     }
 
-    /*
-     execute tout les tours
+    /**
+     * Execute every monkey tricks and notify the observators.
      */
     public void doTricks() {
 

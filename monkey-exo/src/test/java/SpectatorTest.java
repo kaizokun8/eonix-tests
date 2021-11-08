@@ -21,17 +21,20 @@ import static org.mockito.Mockito.*;
 public class SpectatorTest {
 
     //https://www.baeldung.com/java-testing-system-out-println
+    //sauvegarde la sortie standart
     private final PrintStream standardOut = System.out;
 
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
     @BeforeEach
     public void setUp() {
+        //modifie la sortie pour le test
         System.setOut(new PrintStream(outputStreamCaptor));
     }
 
     @AfterEach
     public void tearDown() {
+        //reaffecte la sortie standart
         System.setOut(standardOut);
     }
 

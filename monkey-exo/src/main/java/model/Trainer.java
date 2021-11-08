@@ -15,6 +15,12 @@ public class Trainer {
         this.monkey = monkey;
     }
 
+    /**
+     * Add the spectator to the observers list, make the monkey execute his tricks,
+     * then remove the spectator from the observers .
+     *
+     * @param spectator a spectator to observe the monkey tricks
+     */
     public void start(Spectator spectator) {
 
         this.monkey.addObservator(spectator);

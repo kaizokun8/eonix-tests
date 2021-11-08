@@ -40,13 +40,25 @@ public class Spectator implements Observator {
         return name;
     }
 
+    /**
+     * returns the applause of the spectator
+     *
+     * @param name  the name of the spectator
+     * @param label the label of the trick
+     */
     public static String applauds(String name, String label) {
 
-        return String.format(" %s applaudit pendant le %s", name, label);
+        return String.format("%s applaudit pendant le %s", name, label);
     }
 
+    /**
+     * returns the whistles of the spectator
+     *
+     * @param name  the name of the spectator
+     * @param label the label of the trick
+     */
     public static String whistles(String name, String label) {
 
-        return String.format(" %s siffle pendant le %s", name, label);
+        return String.format("%s siffle pendant le %s", name, label);
     }
 }

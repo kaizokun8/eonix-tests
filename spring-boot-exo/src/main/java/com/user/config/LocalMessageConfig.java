@@ -10,6 +10,9 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 @Configuration
 public class LocalMessageConfig {
 
+    /*
+    * configuration message source, emplacement et encodage
+    * */
     @Bean
     public MessageSource messageSource() {
 
@@ -22,6 +25,9 @@ public class LocalMessageConfig {
         return messageSource;
     }
 
+    /*
+     * permet la récupération des messages à partir des clés associé aux validations
+     * */
     @Bean
     @Primary
     public LocalValidatorFactoryBean getValidator() {

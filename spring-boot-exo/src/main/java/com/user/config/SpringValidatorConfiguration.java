@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Lazy;
 public
 class SpringValidatorConfiguration {
     /*
-     * desactive de validation au moment de la persistence
+     * Desactive de validation au moment de la persistence pour ne la conserver qu'à l'appel des controleurs Rest
      * */
     @Bean
     @Lazy

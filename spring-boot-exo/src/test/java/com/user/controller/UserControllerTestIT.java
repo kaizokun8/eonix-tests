@@ -285,7 +285,7 @@ public class UserControllerTestIT {
     }
 
     /**
-     * Test si la suppression d'un utilisatuer à partir d'une id inexistante retourne un reponse 400 BadRequest
+     * Test si la suppression d'un utilisateur à partir d'une id inexistante retourne un reponse 400 BadRequest
      * avec un message associé à un code 404 NotFound.
      */
     @Test
@@ -304,11 +304,10 @@ public class UserControllerTestIT {
 
         ValidationErrorResponse validationErrorResponse = objectMapper.readValue(response, ValidationErrorResponse.class);
 
-        Violation violation = validationErrorResponse.getViolations().get(0);
+        Assertions.assertThat(validationErrorResponse.getViolations())
+                .extracting(Violation::getStatus, Violation::getMessage)
+                .containsExactly(Assertions.tuple(404,
+                        this.messageSource.getMessage("user.not.found", null, null)));
 
-        Assertions.assertThat(violation.getStatus()).isEqualTo(404);
-
-        Assertions.assertThat(violation.getMessage()).isEqualTo(
-                this.messageSource.getMessage("user.not.found", null, null));
     }
 }
