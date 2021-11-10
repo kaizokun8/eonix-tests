@@ -10,7 +10,7 @@ public interface Subject {
     void addObservator(Observator observator);
 
     /**
-     * Remove an observator to the subject list
+     * Remove an observator from the subject list
      *
      * @param observator an observator implementing the Observator interface
      */
